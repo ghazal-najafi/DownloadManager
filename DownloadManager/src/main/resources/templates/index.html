@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Download Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css'>
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+
+<body>
+<div class="container mt-3">
+
+    <h1 class="is-size-3 has-text-primary">Downloader</h1>
+    <br>
+    <form th:action="@{/add}" th:object="${url}" method="post">
+        <div class="is-flex">
+            <input type="text" placeholder="Add New Url" class="input is-medium is-primary" name="url" id="url">
+            <input type="text" placeholder="Add Thread Number" class="input inputt is-medium is-primary" name="num"
+                   id="num">
+            <input type="submit" value="Add url" class="button is-medium is-primary ml-3">
+        </div>
+        <a th:href="@{/resume}"><input type="submit" value="resume"
+                                       class="toggler__play button is-medium is-primary ml-3" ></a>
+    </form>
+    <div class="toggler">
+        <a th:href="@{/pause}"><input type="submit" value="pause"
+                                      class="toggler__pause button is-medium is-primary ml-3"></a>
+    </div>
+
+</div>
+</body>
+
+</html>
